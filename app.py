@@ -1,11 +1,13 @@
-# app.py
 import streamlit as st
-from scraper import scrape_player_stats
-from model import predict_points
+import pandas as pd
 
-st.title("Dream11 Predictor")
-team1 = st.selectbox("Select Team 1", ["MI", "CSK", "RCB"])
-# ... (rest of your code)
+st.title("🏏 Dream11 Fantasy Predictor")
+st.write("Predict player points for today's match!")
 
-if __name__ == "__main__":
-    st.run()  # Or your custom logic
+# Example: Display a sample prediction table
+sample_data = {
+    "Player": ["Virat Kohli", "Jasprit Bumrah", "Rohit Sharma"],
+    "Predicted Points": [72, 58, 65]
+}
+df = pd.DataFrame(sample_data)
+st.dataframe(df)
